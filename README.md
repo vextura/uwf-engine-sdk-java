@@ -10,53 +10,7 @@ Handles authentication, retries, and endpoint resolution automatically.
 
 ## Installation
 
-### 1. Add the Vextura Maven registry
-
-The package is hosted on GitHub Packages. Add the repository to your `pom.xml`:
-
-```xml
-<repositories>
-    <repository>
-        <id>vextura-github</id>
-        <name>Vextura GitHub Packages</name>
-        <url>https://maven.pkg.github.com/vextura/uwf-engine-sdk-java</url>
-    </repository>
-</repositories>
-```
-
-Or for Gradle, in `build.gradle`:
-
-```groovy
-repositories {
-    maven {
-        url = uri("https://maven.pkg.github.com/vextura/uwf-engine-sdk-java")
-        credentials {
-            username = System.getenv("GITHUB_ACTOR")
-            password = System.getenv("GITHUB_TOKEN")
-        }
-    }
-}
-```
-
-### 2. Configure credentials
-
-GitHub Packages requires a Personal Access Token (PAT) with `read:packages` scope.
-
-Add to `~/.m2/settings.xml`:
-
-```xml
-<settings>
-    <servers>
-        <server>
-            <id>vextura-github</id>
-            <username>YOUR_GITHUB_USERNAME</username>
-            <password>YOUR_GITHUB_PAT</password>
-        </server>
-    </servers>
-</settings>
-```
-
-### 3. Add the dependency
+Available on [Maven Central](https://central.sonatype.com/artifact/ai.vextura/uwf-engine-sdk-java). No credentials or extra repository configuration required.
 
 ```xml
 <dependency>
