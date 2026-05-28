@@ -20,11 +20,11 @@
 'UTF-8'
 -Xdoclint:none
 -doctitle
-'uwf-engine-sdk-java 1.2.0 API'
+'uwf-engine-sdk-java 1.2.1 API'
 -use
 -version
 -windowtitle
-'uwf-engine-sdk-java 1.2.0 API'
+'uwf-engine-sdk-java 1.2.1 API'
 ai.vextura.uwf_engine.runtime
 ai.vextura.uwf_engine.models
 ai.vextura.uwf_engine.hooks
@@ -33,19 +33,19 @@ ai.vextura.uwf_engine
 /Users/khassangali/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.16.1/jackson-annotations-2.16.1.jar = 1703390558000
 /Users/khassangali/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.16.1/jackson-core-2.16.1.jar = 1703391250000
 /Users/khassangali/dev/uwf-engine-sdk-java/src/main/java = 1779990242301
-/Users/khassangali/dev/uwf-engine-sdk-java/target/generated-sources/annotations = 1779990257429
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/tag-search-index.js = 1779990259009
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/overview-tree.html = 1779990258998
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/module-search-index.js = 1779990259009
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/index.html = 1779990258999
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/package-search-index.js = 1779990259009
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/serialized-form.html = 1779990258952
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/index-all.html = 1779990259019
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/allpackages-index.html = 1779990259008
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/member-search-index.js = 1779990259009
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/overview-summary.html = 1779990259020
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/help-doc.html = 1779990259021
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/element-list = 1779990258940
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/search.html = 1779990259020
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/allclasses-index.html = 1779990259008
-/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/type-search-index.js = 1779990259009
+/Users/khassangali/dev/uwf-engine-sdk-java/target/generated-sources/annotations = 1779992031517
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/tag-search-index.js = 1779992033230
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/overview-tree.html = 1779992033220
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/module-search-index.js = 1779992033229
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/index.html = 1779992033221
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/package-search-index.js = 1779992033229
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/serialized-form.html = 1779992033182
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/index-all.html = 1779992033239
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/allpackages-index.html = 1779992033229
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/member-search-index.js = 1779992033230
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/overview-summary.html = 1779992033240
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/help-doc.html = 1779992033241
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/element-list = 1779992033170
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/search.html = 1779992033239
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/allclasses-index.html = 1779992033229
+/Users/khassangali/dev/uwf-engine-sdk-java/target/apidocs/type-search-index.js = 1779992033230

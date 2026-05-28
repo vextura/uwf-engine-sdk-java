@@ -21,6 +21,8 @@ ai/vextura/uwf_engine/models/WorkflowIdInput.class
 ai/vextura/uwf_engine/models/ExecutionList.class
 ai/vextura/uwf_engine/models/ExecutionFailed.class
 ai/vextura/uwf_engine/models/HealthResponse.class
+ai/vextura/uwf_engine/models/VexConfigStatus.class
+ai/vextura/uwf_engine/models/RoutesStatus.class
 ai/vextura/uwf_engine/models/AckResponse.class
 ai/vextura/uwf_engine/models/ExecutionNotFound.class
 ai/vextura/uwf_engine/runtime/SdkException.class

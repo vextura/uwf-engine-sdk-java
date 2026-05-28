@@ -15,8 +15,10 @@
 /Users/khassangali/dev/uwf-engine-sdk-java/src/main/java/ai/vextura/uwf_engine/models/ListExecutionsInput.java
 /Users/khassangali/dev/uwf-engine-sdk-java/src/main/java/ai/vextura/uwf_engine/models/ListExecutionsResponse.java
 /Users/khassangali/dev/uwf-engine-sdk-java/src/main/java/ai/vextura/uwf_engine/models/ListWorkflowsResponse.java
+/Users/khassangali/dev/uwf-engine-sdk-java/src/main/java/ai/vextura/uwf_engine/models/RoutesStatus.java
 /Users/khassangali/dev/uwf-engine-sdk-java/src/main/java/ai/vextura/uwf_engine/models/RunIdInput.java
 /Users/khassangali/dev/uwf-engine-sdk-java/src/main/java/ai/vextura/uwf_engine/models/ServiceStatus.java
+/Users/khassangali/dev/uwf-engine-sdk-java/src/main/java/ai/vextura/uwf_engine/models/VexConfigStatus.java
 /Users/khassangali/dev/uwf-engine-sdk-java/src/main/java/ai/vextura/uwf_engine/models/WorkflowIdInput.java
 /Users/khassangali/dev/uwf-engine-sdk-java/src/main/java/ai/vextura/uwf_engine/models/WorkflowInfo.java
 /Users/khassangali/dev/uwf-engine-sdk-java/src/main/java/ai/vextura/uwf_engine/models/WorkflowList.java

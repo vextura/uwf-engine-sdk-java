@@ -16,14 +16,14 @@ Available on [Maven Central](https://central.sonatype.com/artifact/ai.vextura/uw
 <dependency>
     <groupId>ai.vextura</groupId>
     <artifactId>uwf-engine-sdk-java</artifactId>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
 </dependency>
 ```
 
 Or with Gradle:
 
 ```groovy
-implementation 'ai.vextura:uwf-engine-sdk-java:1.2.0'
+implementation 'ai.vextura:uwf-engine-sdk-java:1.2.1'
 ```
 
 ---

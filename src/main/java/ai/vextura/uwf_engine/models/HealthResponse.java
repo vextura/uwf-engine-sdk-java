@@ -3,8 +3,6 @@ package ai.vextura.uwf_engine.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.List;
-import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class HealthResponse {
@@ -12,34 +10,34 @@ public class HealthResponse {
     @JsonProperty("status")
     public String status;
 
-    @JsonProperty("version")
-    public String version;
-
-    @JsonProperty("uptime")
-    public Integer uptime;
+    @JsonProperty("instance_id")
+    public String instanceId;
 
     @JsonProperty("timestamp")
     public Long timestamp;
 
     @JsonProperty("nats")
-    public ServiceStatus nats;
+    public Boolean nats;
 
-    @JsonProperty("redis")
-    public ServiceStatus redis;
+    @JsonProperty("routes")
+    public RoutesStatus routes;
+
+    @JsonProperty("vex_config")
+    public VexConfigStatus vexConfig;
 
 
     public HealthResponse() {}
 
     public HealthResponse status(String value) { this.status = value; return this; }
 
-    public HealthResponse version(String value) { this.version = value; return this; }
-
-    public HealthResponse uptime(Integer value) { this.uptime = value; return this; }
+    public HealthResponse instanceId(String value) { this.instanceId = value; return this; }
 
     public HealthResponse timestamp(Long value) { this.timestamp = value; return this; }
 
-    public HealthResponse nats(ServiceStatus value) { this.nats = value; return this; }
+    public HealthResponse nats(Boolean value) { this.nats = value; return this; }
 
-    public HealthResponse redis(ServiceStatus value) { this.redis = value; return this; }
+    public HealthResponse routes(RoutesStatus value) { this.routes = value; return this; }
+
+    public HealthResponse vexConfig(VexConfigStatus value) { this.vexConfig = value; return this; }
 
 }
