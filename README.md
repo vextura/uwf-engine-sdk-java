@@ -35,7 +35,7 @@ import com.vextura.uwf_engine.UwfEngineClient;
 import com.vextura.uwf_engine.runtime.BearerAuth;
 
 UwfEngineClient client = UwfEngineClient.withEndpoint(
-    "https://workflow.your-deployment.com",
+    "https://api.vextura.ai",   // or your deployment's vex-gate URL
     new BearerAuth("YOUR_API_TOKEN")
 );
 ```
