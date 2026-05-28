@@ -60,7 +60,7 @@ Add to `~/.m2/settings.xml`:
 
 ```xml
 <dependency>
-    <groupId>com.vextura</groupId>
+    <groupId>ai.vextura</groupId>
     <artifactId>uwf-engine-sdk-java</artifactId>
     <version>1.2.0</version>
 </dependency>
@@ -69,7 +69,7 @@ Add to `~/.m2/settings.xml`:
 Or with Gradle:
 
 ```groovy
-implementation 'com.vextura:uwf-engine-sdk-java:1.2.0'
+implementation 'ai.vextura:uwf-engine-sdk-java:1.2.0'
 ```
 
 ---
@@ -77,8 +77,8 @@ implementation 'com.vextura:uwf-engine-sdk-java:1.2.0'
 ## Setup
 
 ```java
-import com.vextura.uwf_engine.UwfEngineClient;
-import com.vextura.uwf_engine.runtime.BearerAuth;
+import ai.vextura.uwf_engine.UwfEngineClient;
+import ai.vextura.uwf_engine.runtime.BearerAuth;
 
 UwfEngineClient client = UwfEngineClient.withEndpoint(
     "https://api.vextura.ai",   // or your deployment's vex-gate URL
@@ -214,7 +214,7 @@ AsyncExecuteResponse r = client.retryExecution(req);
 The client throws `SdkException` (a `RuntimeException`) on HTTP errors:
 
 ```java
-import com.vextura.uwf_engine.runtime.SdkException;
+import ai.vextura.uwf_engine.runtime.SdkException;
 
 try {
     ExecutionResult result = client.executeWorkflow(req);
