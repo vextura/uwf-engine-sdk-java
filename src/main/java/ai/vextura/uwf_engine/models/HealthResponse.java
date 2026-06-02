@@ -17,7 +17,10 @@ public class HealthResponse {
     public Long timestamp;
 
     @JsonProperty("nats")
-    public Boolean nats;
+    public ServiceHealth nats;
+
+    @JsonProperty("redis")
+    public ServiceHealth redis;
 
     @JsonProperty("routes")
     public RoutesStatus routes;
@@ -34,7 +37,9 @@ public class HealthResponse {
 
     public HealthResponse timestamp(Long value) { this.timestamp = value; return this; }
 
-    public HealthResponse nats(Boolean value) { this.nats = value; return this; }
+    public HealthResponse nats(ServiceHealth value) { this.nats = value; return this; }
+
+    public HealthResponse redis(ServiceHealth value) { this.redis = value; return this; }
 
     public HealthResponse routes(RoutesStatus value) { this.routes = value; return this; }
 

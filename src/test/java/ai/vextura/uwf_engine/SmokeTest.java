@@ -32,8 +32,9 @@ public class SmokeTest {
         test("HealthCheck", () -> {
             HealthResponse r = client.healthCheck();
             assert "healthy".equals(r.status) : "expected status=healthy, got " + r.status;
-            assert r.nats != null && r.nats : "expected nats=true";
-            System.out.println("  status=" + r.status + " nats=" + r.nats);
+            assert r.nats != null && Boolean.TRUE.equals(r.nats.ok) : "expected nats.ok=true";
+            assert r.redis != null && Boolean.TRUE.equals(r.redis.ok) : "expected redis.ok=true";
+            System.out.println("  status=" + r.status + " nats.ok=" + r.nats.ok + " redis.ok=" + r.redis.ok);
         });
 
         test("ListWorkflows", () -> {
