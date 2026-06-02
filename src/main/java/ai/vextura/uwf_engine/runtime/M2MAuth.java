@@ -17,13 +17,15 @@ import java.time.Instant;
  * until 60 seconds before expiry, then refreshes automatically on the next call.
  * Thread-safe — safe to share across concurrent SDK calls.
  *
- * Usage:
+ * Usage (single gate URL — recommended):
  *   AuthProvider auth = new M2MAuth(
- *       System.getenv("VEX_AUTH_URL"),    // e.g. http://vex-auth.vex.internal:8095
+ *       System.getenv("VEX_GATE_URL"),    // e.g. http://vex-gate.vex.internal:8080
  *       System.getenv("VEX_CLIENT_ID"),
  *       System.getenv("VEX_CLIENT_SECRET")
  *   );
- *   UwfEngineClient client = UwfEngineClient.withEndpoint(endpoint, auth);
+ *   UwfEngineClient client = UwfEngineClient.withEndpoint(
+ *       System.getenv("VEX_GATE_URL"), auth
+ *   );
  */
 public class M2MAuth implements AuthProvider {
 

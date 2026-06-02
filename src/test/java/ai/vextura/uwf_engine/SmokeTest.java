@@ -2,37 +2,64 @@ package ai.vextura.uwf_engine;
 
 import ai.vextura.uwf_engine.models.*;
 import ai.vextura.uwf_engine.runtime.BearerAuth;
+import ai.vextura.uwf_engine.runtime.M2MAuth;
+import ai.vextura.uwf_engine.runtime.AuthProvider;
 
 import java.util.Map;
 import java.util.HashMap;
 
 /**
  * Hand-written smoke test for the generated uwf-engine Java SDK.
- * Run: mvn test-compile exec:java -Dexec.mainClass=ai.vextura.uwf_engine.SmokeTest \
- *      -Dexec.classpathScope=test
+ *
+ * Run via gate (M2M auth — recommended):
+ *   export VEX_GATE_URL=http://<gate-host>:8080
+ *   export VEX_CLIENT_ID=my-app
+ *   export VEX_CLIENT_SECRET=my-secret
+ *   mvn test-compile exec:java -Dexec.mainClass=ai.vextura.uwf_engine.SmokeTest \
+ *        -Dexec.classpathScope=test
+ *
+ * Run with static token (quick local test):
+ *   export VEX_GATE_URL=http://localhost:8080
+ *   export VEX_TOKEN=$(vexctl auth token)
+ *   mvn test-compile exec:java -Dexec.mainClass=ai.vextura.uwf_engine.SmokeTest \
+ *        -Dexec.classpathScope=test
  */
 public class SmokeTest {
 
-    // Endpoint resolved at runtime via RIP — never hardcoded.
-    // Obtain before running: vexctl rip resolve uwf-engine <region>
-    // Pass as: -e UWF_ENDPOINT=<resolved-url>
     static final String ENDPOINT;
+    static final AuthProvider AUTH;
+
     static {
-        String ep = System.getenv("UWF_ENDPOINT");
+        String ep = System.getenv("VEX_GATE_URL");
         if (ep == null || ep.isBlank()) {
-            System.err.println("ERROR: UWF_ENDPOINT env var is required.");
-            System.err.println("       Resolve it first: vexctl rip resolve uwf-engine <region>");
+            System.err.println("ERROR: VEX_GATE_URL env var is required.");
+            System.err.println("       e.g. export VEX_GATE_URL=http://<gate-host>:8080");
             System.exit(1);
         }
         ENDPOINT = ep;
+
+        String clientId     = System.getenv("VEX_CLIENT_ID");
+        String clientSecret = System.getenv("VEX_CLIENT_SECRET");
+        String staticToken  = System.getenv("VEX_TOKEN");
+
+        if (clientId != null && !clientId.isBlank() && clientSecret != null && !clientSecret.isBlank()) {
+            AUTH = new M2MAuth(ep, clientId, clientSecret);
+            System.out.println("[auth] M2MAuth client_credentials (" + clientId + ")");
+        } else if (staticToken != null && !staticToken.isBlank()) {
+            AUTH = new BearerAuth(staticToken);
+            System.out.println("[auth] BearerAuth (VEX_TOKEN)");
+        } else {
+            System.err.println("ERROR: supply VEX_CLIENT_ID+VEX_CLIENT_SECRET or VEX_TOKEN");
+            System.exit(1);
+            AUTH = null;
+        }
     }
-    static final BearerAuth NO_AUTH = new BearerAuth("");
 
     static int passed = 0;
     static int failed = 0;
 
     public static void main(String[] args) {
-        UwfEngineClient client = UwfEngineClient.withEndpoint(ENDPOINT, NO_AUTH);
+        UwfEngineClient client = UwfEngineClient.withEndpoint(ENDPOINT, AUTH);
 
         test("HealthCheck", () -> {
             HealthResponse r = client.healthCheck();
@@ -71,7 +98,6 @@ public class SmokeTest {
             assert r.runId != null && !r.runId.isEmpty() : "runId is empty";
             System.out.println("  runId=" + r.runId + " status=" + r.status + " durationMs=" + r.durationMs);
 
-            // Use the runId for follow-up tests
             System.setProperty("smoke.runId", r.runId);
         });
 
