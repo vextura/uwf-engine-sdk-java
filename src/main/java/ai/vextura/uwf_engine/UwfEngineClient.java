@@ -23,7 +23,7 @@ public class UwfEngineClient {
 
     /**
      * Create a client backed by RIP endpoint resolution.
-     * @param ripUrl vex-config base URL, e.g. http://vex-config:9090
+     * @param ripUrl vex-config base URL — resolve at runtime via: vexctl rip resolve vex-config &lt;region&gt;
      */
     public UwfEngineClient(String ripUrl, AuthProvider auth) {
         this.transport = new Transport("WorkflowEngine", ripUrl);

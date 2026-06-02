@@ -13,14 +13,19 @@ import java.util.HashMap;
  */
 public class SmokeTest {
 
-    // workflow-api container IP on vex-dev_vex-dev network; run via:
-    // docker run --rm --network vex-dev_vex-dev -v $(pwd)/target:/app \
-    //   eclipse-temurin:21-jre \
-    //   java -cp "/app/uwf-engine-sdk-java-1.2.0.jar:/app/test-classes:/app/deps/*" \
-    //   -ea ai.vextura.uwf_engine.SmokeTest
-    static final String ENDPOINT = System.getenv().getOrDefault(
-        "UWF_ENDPOINT", "http://vex-dev-workflow-api:8080");
-    // No auth required on health; use empty bearer for authenticated endpoints
+    // Endpoint resolved at runtime via RIP — never hardcoded.
+    // Obtain before running: vexctl rip resolve uwf-engine <region>
+    // Pass as: -e UWF_ENDPOINT=<resolved-url>
+    static final String ENDPOINT;
+    static {
+        String ep = System.getenv("UWF_ENDPOINT");
+        if (ep == null || ep.isBlank()) {
+            System.err.println("ERROR: UWF_ENDPOINT env var is required.");
+            System.err.println("       Resolve it first: vexctl rip resolve uwf-engine <region>");
+            System.exit(1);
+        }
+        ENDPOINT = ep;
+    }
     static final BearerAuth NO_AUTH = new BearerAuth("");
 
     static int passed = 0;
