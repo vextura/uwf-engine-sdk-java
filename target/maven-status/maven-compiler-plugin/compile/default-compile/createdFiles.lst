@@ -6,6 +6,7 @@ ai/vextura/uwf_engine/runtime/AuthProvider.class
 ai/vextura/uwf_engine/models/ExecutionResult.class
 ai/vextura/uwf_engine/models/WorkflowList.class
 ai/vextura/uwf_engine/runtime/RetryPolicy$Operation.class
+ai/vextura/uwf_engine/models/ServiceHealth.class
 ai/vextura/uwf_engine/models/ExecutionNotComplete.class
 ai/vextura/uwf_engine/models/ListExecutionsInput.class
 ai/vextura/uwf_engine/runtime/Transport.class
