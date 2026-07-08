@@ -18,6 +18,9 @@ public class ExecutionResult {
     @JsonProperty("output")
     public Map<String, Object> output;
 
+    @JsonProperty("result")
+    public Map<String, Object> result;
+
     @JsonProperty("error")
     public String error;
 
